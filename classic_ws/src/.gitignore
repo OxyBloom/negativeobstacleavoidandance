@@ -20,6 +20,7 @@ parts/
 sdist/
 var/
 log
+build
 install
 src/bot_camera
 detection
