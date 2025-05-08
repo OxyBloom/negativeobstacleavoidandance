@@ -22,7 +22,7 @@ def generate_launch_description():
                                       description="Absolute path to robot urdf file"
     )
 
-    world_name_arg = DeclareLaunchArgument(name="world_name", default_value="expandedworld")
+    world_name_arg = DeclareLaunchArgument(name="world_name", default_value="eworld2")
 
     world_path = PathJoinSubstitution([
             bumperbot_description,
@@ -63,7 +63,7 @@ def generate_launch_description():
 
     spawn_robot = Node(package="gazebo_ros", executable="spawn_entity.py",
                         arguments=["-entity", "bumperbot",
-                                   "-topic", "robot_description",
+                                   "-topic", "robot_description","-z", "0.1"
                                   ],
                         output="screen"
     )

@@ -23,6 +23,8 @@ install(PROGRAMS
   ${PROJECT_NAME}/dataset.py
   ${PROJECT_NAME}/Dtest.py
   ${PROJECT_NAME}/yolo.py
+  ${PROJECT_NAME}/yolo_optimized.py
+  ${PROJECT_NAME}/yolo_pg.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
