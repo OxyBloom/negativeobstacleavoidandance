@@ -5,7 +5,7 @@ from launch.conditions import IfCondition, UnlessCondition
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_directory
-
+from launch.actions import TimerAction
 
 def generate_launch_description():
     use_slam = LaunchConfiguration("use_slam")
@@ -48,6 +48,11 @@ def generate_launch_description():
     #     executable="safety_stop",
     #     output="screen",
     # )
+
+    laser_scan_merger = Node(
+        package="bot_camera",
+        executable="scan_merge.py",
+    )
 
     localization = IncludeLaunchDescription(
         os.path.join(
@@ -95,15 +100,27 @@ def generate_launch_description():
         condition=IfCondition(use_slam)
     )
     
-    Nav = IncludeLaunchDescription(
-         os.path.join(
-             get_package_share_directory("bumperbot_localization"),
-             "launch",
-             "nav.launch.py"
-         ),
-        condition=UnlessCondition(use_slam)
-     )
-    
+    # Nav = IncludeLaunchDescription(
+    #      os.path.join(
+    #          get_package_share_directory("bumperbot_localization"),
+    #          "launch",
+    #          "nav.launch.py"
+    #      ),
+    #     condition=UnlessCondition(use_slam)
+    #  )
+    Nav = TimerAction(
+    period=3.0,  # Delay for 3 seconds (adjust as needed)
+    actions=[
+        IncludeLaunchDescription(
+            os.path.join(
+                get_package_share_directory("bumperbot_localization"),
+                "launch",
+                "nav.launch.py"
+            ),
+            condition=UnlessCondition(use_slam)
+        )
+    ]
+)
     return LaunchDescription([
         use_slam_arg,
         gazebo,
@@ -114,5 +131,6 @@ def generate_launch_description():
         slam,
         rviz_localization,
         rviz_slam,
-        Nav
+        laser_scan_merger,
+        # Nav
     ])

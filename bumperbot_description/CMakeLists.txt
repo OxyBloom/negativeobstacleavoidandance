@@ -4,6 +4,7 @@ project(bumperbot_description)
 
 find_package(ament_cmake REQUIRED)
 find_package(urdf REQUIRED)
+find_package(realsense_gazebo_plugin REQUIRED)
 
 install(
   DIRECTORY launch meshes urdf rviz models worlds

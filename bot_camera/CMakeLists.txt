@@ -7,7 +7,6 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
-find_package(ament_cmake REQUIRED)
 find_package(ament_cmake_python REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclpy REQUIRED)
@@ -17,15 +16,18 @@ find_package(cv_bridge REQUIRED)
 
 
 install(PROGRAMS
-  ${PROJECT_NAME}/RGB_cam.py
-  ${PROJECT_NAME}/Depth_Cam.py    
-  ${PROJECT_NAME}/testting.py   
-  ${PROJECT_NAME}/dataset.py
-  ${PROJECT_NAME}/Dtest.py
-  ${PROJECT_NAME}/yolo.py
-  ${PROJECT_NAME}/yolo_optimized.py
-  ${PROJECT_NAME}/yolo_pg.py
+  ${PROJECT_NAME}/dataset.py    
+  ${PROJECT_NAME}/cancel.py
+  ${PROJECT_NAME}/scan_merge.py
+  ${PROJECT_NAME}/clean_yolo.py
+  ${PROJECT_NAME}/yolo_pg3.py
   DESTINATION lib/${PROJECT_NAME}
+)
+
+# Add directory to model
+install(DIRECTORY
+  model
+  DESTINATION share/${PROJECT_NAME}
 )
 
 if(BUILD_TESTING)

@@ -17,6 +17,11 @@ def generate_launch_description():
         "map.yaml"  # Replace with your map file name if different
     )
 
+    params_file=os.path.join(
+        get_package_share_directory("bumperbot_localization"),  # Replace with your map package name
+        "params", 
+        "nav2_params.yaml"  # Replace with your map file name if different
+    )
     # Nav2 bringup launch
     nav2 = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
@@ -29,6 +34,7 @@ def generate_launch_description():
         launch_arguments={
             "use_sim_time": use_sim_time,
             "map": map_file,
+            "params_file": params_file,
         }.items(),
     )
     

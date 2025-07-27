@@ -7,11 +7,11 @@
     </include>
 
     <!-- Add Ground -->
-    <include>
+    <!-- <include>
       <uri>model://ground_plane</uri>
-    </include>
+    </include> -->
     <!-- override the default position of the camera !-->
-    <gui>
+   <gui>
       <camera name='gzclient_camera'>
       <!--
         <pose>5 -4 2 0 0.2756 2.3561</pose>
@@ -39,7 +39,7 @@
     </physics>
     <scene>
       <ambient>0.2 0.2 0.2 1</ambient>
-      <background>0.5 0.5 0.5 1</background>
+      <background>0.7 0.7 0.7 1</background>
       <shadows>false</shadows>
       <grid>false</grid>
       <origin_visual>false</origin_visual>
@@ -51,6 +51,24 @@
       <elevation>0</elevation>
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
+    <!-- <physics name='default_physics' default='0' type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics> -->
+    
+    <!-- <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene> -->
+    <!-- <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates> -->
 
 
     <!-- <model name='aws_robomaker_warehouse_WallB_01'>
@@ -92,7 +110,7 @@
         <include>
             <uri>model://large_holed_floor</uri>
         </include>
-        <pose frame=''>-13.56098 20.2009 0 0 -0 0</pose>
+        <pose>-13.56098 20.2009 0 0 -0 0</pose>
     </model>
 
     <!-- ************************ -->
@@ -414,7 +432,7 @@
             <!-- <uri>model://aws_robomaker_warehouse_ClutteringC_01</uri> -->
             <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/aws_robomaker_warehouse_ClutteringC_01</uri>
         </include>
-        <pose frame="">14.8676 14.7679 -0.015663 0 -0 1.56387</pose>
+        <pose frame="">14.8676 14.7679 -0.015663 0 0 1.56387</pose>
 	</model>
 
      <model name='aws_robomaker_warehouse_ClutteringD_01_005'>
@@ -429,7 +447,7 @@
             <!-- <uri>model://aws_robomaker_warehouse_ClutteringD_01</uri> -->
             <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/aws_robomaker_warehouse_ClutteringD_01</uri>
         </include>
-        <pose frame=''>-0.187785 -12.6897 -0.319559 0 -0 0</pose>
+        <pose frame=''>-0.187785 -12.6897 -0.319559 0 0 0</pose>
 	</model>
                                                  
       <model name='aws_robomaker_warehouse_TrashCanC_01_002'>
@@ -444,14 +462,14 @@
             <!-- <uri>model://aws_robomaker_warehouse_TrashCanC_01</uri> -->
             <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/aws_robomaker_warehouse_TrashCanC_01</uri>
         </include>
-        <pose frame=''>-2.43398 -20.3126 0 0 -0 0</pose>
+        <pose frame=''>-2.43398 -20.3126 0 0 0 0</pose>
 	</model>
     <model name='aws_robomaker_warehouse_TrashCanC_01_002b'>
         <include>
             <!-- <uri>model://aws_robomaker_warehouse_TrashCanC_01</uri> -->
             <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/aws_robomaker_warehouse_TrashCanC_01</uri>
         </include>
-        <pose frame=''>-12.4577 6.70588 0 0 -0 0</pose>
+        <pose frame=''>-12.4577 6.70588 0 0 0 0</pose>
 	</model>
 
 
@@ -467,7 +485,7 @@
             <!-- <uri>model://aws_robomaker_warehouse_PalletJackB_01</uri> -->
             <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/aws_robomaker_warehouse_PalletJackB_01</uri>
         </include>
-        <pose frame=''>9 29 0.023266 0 -0 0</pose>
+        <pose frame=''>9 29 0.023266 0 0 0</pose>
 	</model>
 
     	
@@ -571,7 +589,7 @@
       <direction>0.1 0.1 -1</direction>
     </light> -->
     <!-- 3rd row -->
-    <!-- <light name="Warehouse_CeilingLight_003b" type="point">
+    <light name="Warehouse_CeilingLight_003b" type="point">
       <pose>0 -17 8.5 0 0 0</pose>
       <diffuse>0.5 0.5 0.5 1</diffuse>
       <specular>0.2 0.2 0.2 1</specular>
@@ -581,11 +599,11 @@
         <linear>0.01</linear>
         <quadratic>0.001</quadratic>
       </attenuation>
-      <cast_shadows>1</cast_shadows>
+      <!-- <cast_shadows>1</cast_shadows> -->
       <direction>0.1 0.1 -1</direction>
     </light>
 
-    <light name="Warehouse_CeilingLight_003b_2" type="point">
+    <!-- <light name="Warehouse_CeilingLight_003b_2" type="point">
       <pose>12 -17 8.5 0 0 0</pose>
       <diffuse>0.5 0.5 0.5 1</diffuse>
       <specular>0.2 0.2 0.2 1</specular>
