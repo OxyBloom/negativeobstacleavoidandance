@@ -40,7 +40,7 @@ mkdir -p bumperbot/src
 2. Clone this repo
 ```sh
 cd bumperbot_ws/src
-git clone https://github.com/AntoBrandi/Bumper-Bot.git
+git clone https://github.com/OxyBloom/negative_obstacle_avoidandance.git
 ```
 
 3. Install the dependencies
