@@ -90,4 +90,5 @@ ros2 run bot_camera clean_yolo.py
 ## :link: Contact
 
 David Esuga-Mopah - esugamopah@gmail.com
+-----------------------------------------
 Olawale Hope Shonde - Shondehope@gmail.com
